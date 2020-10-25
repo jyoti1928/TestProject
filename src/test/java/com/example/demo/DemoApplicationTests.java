@@ -66,5 +66,12 @@ public class DemoApplicationTests {
 	     String response = restTemplate.getForObject("/connected?origin={origin}&destination={destination}", String.class, params);
 	     Assert.assertEquals("no", response);
 	 }
+	 
+	 @Test
+	 public void testMissingCities() {
+		 
+	     String response = restTemplate.getForObject("/connected", String.class);
+	     Assert.assertEquals("no", response);
+	 }
 
 }

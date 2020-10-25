@@ -18,8 +18,8 @@ public class ConnectedCityController {
 	private ConnectedCityService connCityService;
 	
 	@RequestMapping(value = "/connected")
-	public String checkIfCitiesAreConnected(@RequestParam("origin") String origin,
-			@RequestParam("destination") String destination) throws IOException{
+	public String checkIfCitiesAreConnected(@RequestParam(value = "origin", defaultValue = "none") String origin,
+			@RequestParam(value = "destination", defaultValue = "none") String destination) throws IOException{
 		
 		Objects.requireNonNull(origin);
 		Objects.requireNonNull(destination);
